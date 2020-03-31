@@ -1,0 +1,251 @@
+ <!-- <div class="card-panel blue bodyDiv">
+	<div class="container bodyContainer">
+		<div class="row">
+			<div class="col s12">
+				<div class="card">
+					<div class="card-tabs">
+						<ul class="tabs tabs-fixed-width">
+							<li class="tab">
+								<a href="#login" class="active">Chat App Login</a>
+							</li>
+							<li class="tab">
+								<a href="#signup">Chat App Sign Up</a>
+							</li>
+						</ul>
+					</div>
+					<div class="card-content">
+						<p style="text-align: center; font-size: 20px;">
+							Welcome to Chat App
+						</p>
+					</div>
+					<div class="card-content  auth-content">
+						<div id="login">
+							<app-login></app-login>
+						</div>
+						<div id="signup">
+							<app-signup></app-signup>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div> -->
+
+<!-- 
+<section class="user">
+	<div style="text-align:center;font-size:5rem;margin-top:-500px;">
+		<svg viewBox ="0 0 600 300">
+			
+			<symbol id="s-text">
+			  <text text-anchor="middle" x="20%" y="10%" dy=".30em">SOCIAL</text>
+			</symbol>
+			
+			<use class="text" xlink:href="#s-text"></use>
+			<use class="text" xlink:href="#s-text"></use>
+			<use class="text" xlink:href="#s-text"></use>
+			<use class="text" xlink:href="#s-text"></use>
+			<use class="text" xlink:href="#s-text"></use>
+		  </svg>
+	</div>
+	<div class="user_options-container">
+	  <div class="user_options-text">
+		<div class="user_options-unregistered">
+		  <h2 style="color:white;"class="user_unregistered-title">Don't have an account?</h2>
+		  <p style="color:#E8716D"class="user_unregistered-text"></p>
+		  <button class="user_unregistered-signup" id="signup-button" (click) = "signup()">Sign up</button>
+		</div>
+  
+		<div class="user_options-registered">
+		  <h2 style="color:white;"class="user_registered-title">Have an account?</h2>
+		  <p style="color:#E8716D" class="user_registered-text"></p>
+		  <button class="user_registered-login" id="login-button" (click)="login()">Login</button>
+		</div>
+	  </div>
+	  
+	  <div class="user_options-forms" id="user_options-forms">
+		<div class="user_forms-login">
+		  <h2 class="forms_title"><b>Login</b></h2>
+		  <form class="forms_form" (ngSubmit) = "onLogin(loginForm)" #loginForm = "ngForm">
+		
+			  <div class="forms_field">
+				<label for="email_inline">Email</label>
+	
+				<input class="forms_field-input" class="input-field"
+                    type="email" 
+                    matInput 
+                    placeholder="Ex.abc@gmail.com" 
+                    ngModel 
+                    name="email"  
+                    #email = "ngModel" 
+                    pattern = "^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"
+					autofocus
+					class="validate"
+					>
+					<span style="margin-left:-8px;"class="helper-text" data-error="Pls enter the email in the form abc@gmail.com" data-success="success"></span>
+                    
+			  </div>
+			  <div class="forms_field" >
+				<label for="password_inline">Password</label>
+				<input  
+				class="forms_field-input" 
+					class="input-field"
+                   type="password"
+                    matInput 
+                    placeholder="Password" 
+                    minlength="8"
+                    ngModel 
+                    name="password" 
+                    #password = "ngModel" 
+                    
+					class="validate"
+					>
+					<span style="margin-left:-8px;"class="helper-text" data-error="Password must contains 1 uppercase and lowercase letter and 1 number" data-success="success"></span>
+			  </div>
+			  
+			<div class="forms_buttons">
+			  <button type="button" class="forms_buttons-forgot">Forgot password?</button>
+			  <button class="forms_buttons-action" mat-raised-button type="submit" color="primary">Login</button>
+			</div>
+		  </form>
+		</div>
+		<div  class="user_forms-signup">
+		  <h2 class="forms_title">Sign Up</h2>
+		 
+		  <form class="forms_form" (ngSubmit) = "onRegister(registerForm)" 
+		  #registerForm = "ngForm">
+			
+			  <div class="forms_field">
+		 <div class="input-field" >
+			 
+			<label for="user_name">Username</label>
+			<input placeholder="username" id="user_name" type="text" class="validate"
+			minlength="3"
+			name="username"
+			ngModel
+			#username="ngModel"
+			matInput
+			required
+			>
+			<span style="margin-left:-8px;"class="helper-text" data-error="name should be minimum of three characters" data-success="success"></span>
+		  </div>
+			  </div>
+			  
+			  <div class="forms_field">
+				
+		<div class="input-field">
+			<label for="last_name">Mobile Number</label>
+				<input id="mobile" type="text" class="validate"
+				placeholder="ex.9509509509"
+				minlength="10"
+				name="mob"
+        ngModel 
+        #mob = "ngModel" 
+        pattern = "^((\\+91-?)|0)?[0-9]{10}$"
+				>
+				<span style="margin-left:-8px;"class="helper-text" data-error="Mobile number should be of 10 digits" data-success="success"></span>
+		</div>
+			  </div>
+			  <div class="forms_field">
+				  <div class="input-field">
+					<label for="last_name">Email</label>
+				<input 
+				id="email"
+				type="email"
+				matInput 
+				placeholder="Ex.abc@gmail.com" 
+			   
+				name="email"
+				ngModel
+				 #email = "ngModel" 
+				 pattern = "^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"
+				 class="validate">
+				 <span style="margin-left:-8px;"class="helper-text" data-error="Email address should be in the form of abc@gmail.com" data-success="success"></span>
+		</div>
+
+			  </div>
+			  <div>
+				  <div class="input-field">
+					<label for="last_name">Password</label>
+				<input 
+				
+				type="password" 
+				placeholder="Password"  
+				minlength="9"
+				name="password"
+				ngModel 
+				#password = "ngModel" 
+				matInput 
+				class="validate"
+				>
+				<span style="margin-left:-8px;"class="helper-text" data-error="Password must contains 1 uppercase and lowercase letter and 1 number" data-success="right"></span>
+				</div>
+			  </div>
+			  <p>
+				  <label>Gender</label><br>
+				  <label>
+				<input class="with-gap" name="gender" value="Male" 
+				ngModel 
+				#gender = "ngModel"  type="radio" />
+				<span for="Male">Male</span>
+			</label>
+			<label>
+				<input class="with-gap" name="gender" ngModel 
+				#gender = "ngModel"  value="Female"  type="radio" />
+				<span for="Female">Female</span>
+			</label>
+			  </p>
+			<div class="forms_buttons">
+				<button class="forms_buttons-action"
+				mat-raised-button 
+				type="submit" color="primary"  (click) = "registerProcess(registerForm)">Sign Up</button>
+			</div>
+		  </form>
+		
+		</div>
+	  </div>
+	</div>
+  
+  </section>
+	-->
+	
+	
+<section class="user">
+	<div class="user_options-container">
+		<div class="user_options-text">
+			<div class="user_options-unregistered">
+				<h2 style="color:white;" class="user_unregistered-title">
+					Don't have an account?
+				</h2>
+				<p style="color:#E8716D" class="user_unregistered-text">Social</p>
+				<button
+					class="user_unregistered-signup"
+					id="signup-button"
+					(click)="onSignup()"
+				>
+					Sign up
+				</button>
+			</div>
+
+			<div class="user_options-registered">
+				<h2 style="color:white;" class="user_registered-title">
+					Have an account?
+				</h2>
+				<p style="color:#E8716D" class="user_registered-text">Social</p>
+				<button
+					class="user_registered-login"
+					id="login-button"
+					(click)="onLogin()"
+				>
+					Login
+				</button>
+			</div>
+		</div>
+
+		<div class="user_options-forms" id="user_options-forms">
+			<app-login class="login"></app-login>
+			<app-signup class="signup"></app-signup>
+		</div>
+	</div>
+</section>

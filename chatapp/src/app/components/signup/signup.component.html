@@ -1,0 +1,272 @@
+<!-- <div class="container">
+	<div class="row">
+		<div class="col s10 offset-s1" id="panel">
+			<div class="progress" *ngIf="showSpinner">
+				<div class="indeterminate"></div>
+			</div>
+			<h3 id="title">Sign Up</h3>
+			<div id="errorMsg" *ngIf="errorMessage">
+				<span>{{ errorMessage }}</span>
+			</div>
+			<form
+				class="col s12"
+				[formGroup]="signupForm"
+				novalidate
+				(ngSubmit)="signupUser()"
+			>
+				<div class="row">
+					<div class="input-field col s12">
+						<input id="user_name" type="text" formControlName="username" />
+						<label for="user_name">Username</label>
+						<span
+							class="error"
+							*ngIf="
+								!signupForm.controls['username'].valid &&
+								signupForm.controls['username'].touched
+							"
+						>
+							Username is Required
+						</span>
+					</div>
+				</div>
+				<div class="row">
+					<div class="input-field col s12">
+						<input id="email" type="email" formControlName="email" />
+						<label for="email">Email</label>
+						<span
+							class="error"
+							*ngIf="
+								!signupForm.controls['email'].valid &&
+								signupForm.controls['email'].touched
+							"
+						>
+							Email is Required
+						</span>
+					</div>
+				</div>
+				<div class="row">
+					<div class="input-field col s12">
+						<input id="pass-word" type="password" formControlName="password" />
+						<label for="pass-word">Password</label>
+						<span
+							class="error"
+							*ngIf="
+								!signupForm.controls['password'].valid &&
+								signupForm.controls['password'].touched
+							"
+						>
+							Password is Required
+						</span>
+					</div>
+				</div>
+				<button
+					class="btn waves-effect"
+					id="signupbtn"
+					[disabled]="!signupForm.valid"
+				>
+					Sign Up
+				</button>
+			</form>
+		</div>
+	</div>
+</div> -->
+<!-- 
+
+<section class="user">
+	
+	<div class="user_options-container">
+	 
+	  <div class="user_options-forms" id="user_options-forms">
+		
+		<div  class="user_forms-signup">
+		  <h2 class="forms_title">Sign Up</h2>
+		 
+		  <form class="forms_form" (ngSubmit) = "onRegister(registerForm)" 
+		  #registerForm = "ngForm">
+			
+			  <div class="forms_field">
+		 <div class="input-field" >
+			 
+			<label for="user_name">Username</label>
+			<input placeholder="username" id="user_name" type="text" class="validate"
+			minlength="3"
+			name="username"
+			ngModel
+			#username="ngModel"
+			matInput
+			required
+			>
+			<span style="margin-left:-8px;"class="helper-text" data-error="name should be minimum of three characters" data-success="success"></span>
+		  </div>
+			  </div>
+			  
+			  <div class="forms_field">
+				
+		<div class="input-field">
+			<label for="last_name">Mobile Number</label>
+				<input id="mobile" type="text" class="validate"
+				placeholder="ex.9509509509"
+				minlength="10"
+				name="mob"
+        ngModel 
+        #mob = "ngModel" 
+        pattern = "^((\\+91-?)|0)?[0-9]{10}$"
+				>
+				<span style="margin-left:-8px;"class="helper-text" data-error="Mobile number should be of 10 digits" data-success="success"></span>
+		</div>
+			  </div>
+			  <div class="forms_field">
+				  <div class="input-field">
+					<label for="last_name">Email</label>
+				<input 
+				id="email"
+				type="email"
+				matInput 
+				placeholder="Ex.abc@gmail.com" 
+			   
+				name="email"
+				ngModel
+				 #email = "ngModel" 
+				 pattern = "^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"
+				 class="validate">
+				 <span style="margin-left:-8px;"class="helper-text" data-error="Email address should be in the form of abc@gmail.com" data-success="success"></span>
+		</div>
+
+			  </div>
+			  <div>
+				  <div class="input-field">
+					<label for="last_name">Password</label>
+				<input 
+				
+				type="password" 
+				placeholder="Password"  
+				minlength="9"
+				name="password"
+				ngModel 
+				#password = "ngModel" 
+				matInput 
+				class="validate"
+				>
+				<span style="margin-left:-8px;"class="helper-text" data-error="Password must contains 1 uppercase and lowercase letter and 1 number" data-success="right"></span>
+				</div>
+			  </div>
+			  <p>
+				  <label>Gender</label><br>
+				  <label>
+				<input class="with-gap" name="gender" value="Male" 
+				ngModel 
+				#gender = "ngModel"  type="radio" />
+				<span for="Male">Male</span>
+			</label>
+			<label>
+				<input class="with-gap" name="gender" ngModel 
+				#gender = "ngModel"  value="Female"  type="radio" />
+				<span for="Female">Female</span>
+			</label>
+			  </p>
+			<div class="forms_buttons">
+				<button class="forms_buttons-action"
+				mat-raised-button 
+				type="submit" color="primary"  (click) = "registerProcess(registerForm)">Sign Up</button>
+			</div>
+		  </form>
+		
+		</div>
+	  </div>
+	</div>
+  
+  </section>
+	-->
+
+<div class="signup">
+	<h2 class="forms_title">Sign Up</h2>
+	<form class="forms_form" (ngSubmit) = "onRegister(registerForm)" 
+	#registerForm = "ngForm">
+		
+	<div class="forms_field">
+		<div class="input-field" >
+			
+		   <label for="user_name">Full Name</label>
+		   <input placeholder="Full Name" id="user_name" type="text" class="validate"
+		   minlength="3"
+		   name="username"
+		   ngModel
+		   #username="ngModel"
+		   matInput
+		   required
+		   >
+		   <span style="margin-left:-8px;"class="helper-text" data-error="name should be minimum of three characters" data-success="success"></span>
+		 </div>
+			 </div>
+			 
+			 <div class="forms_field">
+			   
+	   <div class="input-field">
+		   <label for="last_name">Mobile Number</label>
+			   <input id="mobile" type="text" class="validate"
+			   placeholder="ex.9509509509"
+			   minlength="10"
+			   name="mob"
+	   ngModel 
+	   #mob = "ngModel" 
+	   pattern = "^((\\+91-?)|0)?[0-9]{10}$"
+			   >
+			   <span style="margin-left:-8px;"class="helper-text" data-error="Mobile number should be of 10 digits" data-success="success"></span>
+	   </div>
+			 </div>
+			 <div class="forms_field">
+				 <div class="input-field">
+				   <label for="last_name">Email</label>
+			   <input 
+			   id="email"
+			   type="email"
+			   matInput 
+			   placeholder="Ex.abc@gmail.com" 
+			  
+			   name="email"
+			   ngModel
+				#email = "ngModel" 
+				pattern = "^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"
+				class="validate">
+				<span style="margin-left:-8px;"class="helper-text" data-error="Email address should be in the form of abc@gmail.com" data-success="success"></span>
+	   </div>
+
+			 </div>
+			 <div>
+				 <div class="input-field">
+				   <label for="last_name">Password</label>
+			   <input 
+			   
+			   type="password" 
+			   placeholder="Password"  
+			   minlength="9"
+			   name="password"
+			   ngModel 
+			   #password = "ngModel" 
+			   matInput 
+			   class="validate"
+			   >
+			   <span style="margin-left:-8px;"class="helper-text" data-error="Password must contains 1 uppercase and lowercase letter and 1 number" data-success="right"></span>
+			   </div>
+			 </div>
+			 <p>
+				 <label>Gender</label><br>
+				 <label>
+			   <input class="with-gap" name="gender" value="Male" 
+			   ngModel 
+			   #gender = "ngModel"  type="radio" />
+			   <span for="Male">Male</span>
+		   </label>
+		   <label>
+			   <input class="with-gap" name="gender" ngModel 
+			   #gender = "ngModel"  value="Female"  type="radio" />
+			   <span for="Female">Female</span>
+		   </label>
+			 </p>	
+		<div class="forms_buttons">
+			<button class="forms_buttons-action"
+			mat-raised-button 
+			type="submit" color="primary"  (click) = "registerProcess(registerForm)">Sign Up</button>
+		</div>
+	</form>
+</div>
